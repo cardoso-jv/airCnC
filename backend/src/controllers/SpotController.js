@@ -21,16 +21,16 @@ module.exports = {
     const user = await User.findById(user_id);
 
     if (!user) {
-      return res.status(400).json({ error: 'User does not exist' })
+      return res.status(400).json({ error: 'User does not exist' });
     }
 
     const spot = await Spot.create({
       user: user_id,
       thumbnail: filename,
       company,
-      techs: techs.split(',').map(tech => tech.trim()),
-      price
-    })
+      techs: techs.split(',').map((tech) => tech.trim()),
+      price,
+    });
 
     return res.json({ spot });
   },

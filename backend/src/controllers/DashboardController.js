@@ -7,6 +7,5 @@ module.exports = {
     const spots = await Spot.find({ user: user_id });
 
     return res.json(spots);
-
-  }
-}
+  },
+};
