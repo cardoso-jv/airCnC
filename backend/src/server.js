@@ -14,7 +14,7 @@ const server = http.Server(app);
 const io = socketio(server);
 
 mongoose.connect(
-  'mongodb+srv://cardojvo:cardojvo@aircnc-ktup5.mongodb.net/aircnc?retryWrites=true&w=majority',
+  'mongodb+srv://airCnC:adm@applications-ktup5.mongodb.net/airCnC?retryWrites=true&w=majority',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,

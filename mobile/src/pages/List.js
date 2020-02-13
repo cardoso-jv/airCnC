@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, SafeAreaView, AsyncStorage, ScrollView, Image, StyleSheet, StatusBar } from 'react-native';
+import { SafeAreaView, AsyncStorage, ScrollView, Image, StyleSheet, StatusBar } from 'react-native';
 
 import SpotList from '../components/SpotList';
 import logo from '../assets/logo.png';

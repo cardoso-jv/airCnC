@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const {localhost} = require('../localhost');
 
 const SpotSchema = new mongoose.Schema(
   {
@@ -19,7 +20,7 @@ const SpotSchema = new mongoose.Schema(
 );
 
 SpotSchema.virtual('thumbnail_url').get(function () {
-  return `http://192.168.0.102:3333/files/${this.thumbnail}`;
+  return `${localhost}:3333/files/${encodeURI(this.thumbnail)}`;
 });
 
 module.exports = mongoose.model('Spot', SpotSchema);
