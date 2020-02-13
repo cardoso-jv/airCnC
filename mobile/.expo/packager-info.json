@@ -1,9 +1,9 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 23889,
-  "expoServerNgrokUrl": "https://vy-3qa.anonymous.mobile.exp.direct",
-  "packagerNgrokUrl": "https://packager.vy-3qa.anonymous.mobile.exp.direct",
-  "ngrokPid": 23915
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null
 }

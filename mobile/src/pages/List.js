@@ -1,12 +1,26 @@
 import React, { useState, useEffect } from 'react';
-import { SafeAreaView, AsyncStorage, ScrollView, Image, StyleSheet, StatusBar } from 'react-native';
+import socketio from 'socket.io-client';
+import { SafeAreaView, AsyncStorage, ScrollView, Image, StyleSheet, StatusBar, Alert } from 'react-native';
 
 import SpotList from '../components/SpotList';
 import logo from '../assets/logo.png';
+import {localhost} from '../localhost';
 
 
 export default function List() {
   const [techs, setTechs] = useState([]);
+
+
+  useEffect(()=>{
+    AsyncStorage.getItem('user').then(user_id=>{
+      const socket = socketio(`${localhost}:3333`,{
+        query: {user_id}
+      })
+      socket.on('booking_response', booking => {
+        Alert.alert(`Sua reserva em ${booking.spot.company} em ${booking.date} foi ${booking.approved ? 'APROVADA' : 'REJEITADA'}`);
+      })
+    })
+  },[])
 
   useEffect(() => {
     AsyncStorage.getItem('techs').then(storageTechs => {
